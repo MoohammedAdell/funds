@@ -1,12 +1,12 @@
-import { UserConsumer } from "./userContext";
+import { useContext } from "react";
+import { UserContext } from "../App";
 
 function Cf() {
+  const pasta = useContext(UserContext);
   return (
-    <UserConsumer>
-      {(name) => {
-        return <h1> Hello {name}</h1>;
-      }}
-    </UserConsumer>
+    <>
+      <div>{pasta}</div>
+    </>
   );
 }
 

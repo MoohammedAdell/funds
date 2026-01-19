@@ -1,9 +1,9 @@
-import FetchingDataByUseeffect from "./components/FetchingDataByUseeffect";
+import UseReducer from "./components/UseReducer";
 
 function App() {
   return (
     <div className="app">
-      <FetchingDataByUseeffect />
+      <UseReducer />
     </div>
   );
 }
