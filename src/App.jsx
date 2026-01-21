@@ -1,10 +1,11 @@
 import UseReducer from "./components/UseReducer";
 import UseRef from "./components/UseRef";
+import ReactRouter from "./ReactRouter";
 
 function App() {
   return (
-    <div className="app">
-      <UseRef />
+    <div>
+      <ReactRouter />
     </div>
   );
 }

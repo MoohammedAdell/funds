@@ -1,6 +1,41 @@
-.app {
+/* .app {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+} */
+.wrapper {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  /* margin-left: 20px; */
+}
+.header ul {
+  display: flex;
+  background-color: black;
+  list-style: none;
+  padding: 10px;
+}
+.header ul li a {
+  color: white;
+  text-decoration: none;
+  padding-left: 20px;
+}
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70%;
+}
+.footer {
+  background-color: black;
+  text-align: center;
+  padding: 10px;
+  color: white;
 }
