@@ -1,3 +1,5 @@
+import { Link, NavLink } from "react-router-dom";
+
 function ReactRouter() {
   return (
     <div className="wrapper">
@@ -5,18 +7,17 @@ function ReactRouter() {
         <h1>learn code </h1>
         <ul>
           <li>
-            <a href="@">home</a>
+            
+            <NavLink to="/">home</NavLink>
           </li>
           <li>
-            <a href="@">faqs</a>
+            <NavLink to="/faqs">faqs</NavLink>
           </li>
           <li>
-            <a href="@">contact</a>
+            <NavLink to="/contact">contact</NavLink>
           </li>
         </ul>
       </div>
-      <div className="main"> content here</div>
-      <div className="footer"> footer here</div>
     </div>
   );
 }
