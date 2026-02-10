@@ -1,23 +1,15 @@
-import Contact from "./components/Contact";
-import Faqs from "./components/Faqs";
-import Home from "./components/Home";
-import UseReducer from "./components/UseReducer";
-import UseRef from "./components/UseRef";
-import ReactRouter from "./components/ReactRouter";
-import { Routes, Route } from "react-router-dom";
-import Count from "./components/zustand/Count";
+import Count from "./components/zustand/stores/count/Count";
+import Toggle from "./components/zustand/stores/toggle/Toggle";
+import Mood from "./components/zustand/stores/Mood/Mood";
+import Cart from "./components/zustand/stores/cart/Cart";
 
 function App() {
   return (
     <>
-      {/* <ReactRouter />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/faqs" element={<Faqs />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes> */}
-
       <Count />
+      <Toggle />
+      <Mood />
+      <Cart/>
     </>
   );
 }
