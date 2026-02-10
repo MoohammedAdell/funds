@@ -5,16 +5,19 @@ import UseReducer from "./components/UseReducer";
 import UseRef from "./components/UseRef";
 import ReactRouter from "./components/ReactRouter";
 import { Routes, Route } from "react-router-dom";
+import Count from "./components/zustand/Count";
 
 function App() {
   return (
     <>
-      <ReactRouter />
+      {/* <ReactRouter />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/faqs" element={<Faqs />} />
         <Route path="/contact" element={<Contact />} />
-      </Routes>
+      </Routes> */}
+
+      <Count />
     </>
   );
 }
