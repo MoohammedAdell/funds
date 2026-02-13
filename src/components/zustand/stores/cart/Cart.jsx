@@ -1,3 +1,4 @@
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useCart } from "./StoreCart";
 
 function Cart() {
@@ -12,7 +13,7 @@ function Cart() {
   const totalPrice = useCart((state) =>
     state.cart.reduce((total, item) => total + item.price * item.qty, 0),
   );
-
+  const navigate = useNavigate();
   const products = [
     { id: 1, title: "Phone", price: 1000 },
     { id: 2, title: "Laptop", price: 20000 },
@@ -63,6 +64,12 @@ function Cart() {
 
       <h4>Total Qty: {totalQty}</h4>
       <h4>Total Price: {totalPrice}</h4>
+
+      <div>
+        <Link style={{ curser:"pointer" }} onClick={() => navigate(-1)}>
+          Go Back To Home
+        </Link>
+      </div>
     </>
   );
 }
