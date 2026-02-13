@@ -28,13 +28,11 @@ function App() {
         <Route path="/products" element={<Products />} />
       </Routes>
       <Auth />
-      <Count />
+      {/* <Count />
       <Toggle />
-      <Mood />
+      <Mood /> */}
 
-      <div>
-        <Link to="/dashboard">go to dashboard</Link>
-      </div>
+     
     </>
   );
 }

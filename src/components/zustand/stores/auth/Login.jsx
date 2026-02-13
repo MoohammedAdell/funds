@@ -9,16 +9,17 @@ function Login() {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [role, setRole] = useState("employee");
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const success = await login(name, email);
+    const success = await login(name, email,role);
 
     if (success) {
-      navigate("/");
+      navigate("/dashboard");
     }
   };
 
@@ -37,6 +38,12 @@ function Login() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
+
+      <select value={role} onChange={(e) => setRole(e.target.value)}>
+        <option value="admin">Admin</option>
+        <option value="employee">Employee</option>
+        <option value="hr">HR</option>
+      </select>
 
       <button type="submit" disabled={loading}>
         {loading ? "Loading..." : "Login"}

@@ -10,7 +10,7 @@ export const useAuthStore = create(
       loading: false,
       error: null,
 
-      login: async (name, email) => {
+      login: async (name, email,role) => {
         set({ loading: true, error: null });
 
         try {
@@ -24,6 +24,7 @@ export const useAuthStore = create(
                   user: {
                     name,
                     email,
+                    role,
                   },
                   token: "fake-jwt-token",
                 });
