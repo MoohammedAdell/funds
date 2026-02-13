@@ -10,7 +10,7 @@ function Auth() {
     <>
       {isAuthenticated ? (
         <>
-          <h3>Welcome {user.name}</h3>
+          <h3>Welcome {user?.name}</h3>
           <button onClick={logout}>Logout</button>
         </>
       ) : (

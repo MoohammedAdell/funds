@@ -4,42 +4,45 @@ import { useNavigate } from "react-router-dom";
 
 function Login() {
   const login = useAuthStore((state) => state.login);
+  const loading = useAuthStore((state) => state.loading);
+  const error = useAuthStore((state) => state.error);
 
-  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
   const navigate = useNavigate();
-  
 
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    login({
-      name: username,
-      email: email,
-    });
-    navigate("/")
+    const success = await login(name, email);
+
+    if (success) {
+      navigate("/");
+    }
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        placeholder="Enter Your username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
+        placeholder="Enter your name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
       />
 
       <input
         type="email"
-        placeholder="Enter Your email"
+        placeholder="Enter your email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
 
-      <button type="submit">Login</button>
-      
+      <button type="submit" disabled={loading}>
+        {loading ? "Loading..." : "Login"}
+      </button>
+
+      {error && <p>{error}</p>}
     </form>
   );
 }
